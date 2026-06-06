@@ -1,41 +1,61 @@
 .btn {
-    border: none;
-    cursor: pointer;
-    padding: @padding-base @padding-large;
-
-    .border-radius(4px);
-    .transition();
-
+  display: inline-block;
+  padding: @padding-base @padding-large;
+  font-size: @font-size-base;
+  font-family: @font-family-base;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  .border-radius(4px);
+  .transition();
+  
+  &:hover {
+    transform: translateY(-2px);
+    .box-shadow(0 4px 8px rgba(0,0,0,0.2));
+  }
+  
+  &--primary {
+    background: @primary-color;
+    color: white;
+    
     &:hover {
-        transform: translateY(-2px);
+      background: darken(@primary-color, 10%);
     }
-
-    &--primary {
-        background: @primary-color;
-        color: white;
+  }
+  
+  &--secondary {
+    background: @secondary-color;
+    color: white;
+    
+    &:hover {
+      background: darken(@secondary-color, 10%);
     }
-
-    &--secondary {
-        background: @secondary-color;
-        color: white;
+  }
+  
+  &--danger {
+    background: @danger-color;
+    color: white;
+  }
+  
+  &--large {
+    padding: @padding-large @padding-large * 1.5;
+    font-size: @font-size-large;
+  }
+  
+  &--small {
+    padding: @padding-base/2 @padding-base;
+    font-size: @font-size-small;
+  }
+  
+  &--outline {
+    background: transparent;
+    border: 2px solid @primary-color;
+    color: @primary-color;
+    
+    &:hover {
+      background: @primary-color;
+      color: white;
     }
-
-    &--danger {
-        background: @danger-color;
-        color: white;
-    }
-
-    &--outline {
-        background: transparent;
-        border: 2px solid @primary-color;
-        color: @primary-color;
-    }
-
-    &--large {
-        font-size: @font-size-large;
-    }
-
-    &--small {
-        font-size: @font-size-small;
-    }
+  }
 }
