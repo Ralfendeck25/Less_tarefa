@@ -1,0 +1,35 @@
+@cardClass: card;
+
+.@{cardClass} {
+    background: white;
+
+    .border-radius(8px);
+    .box-shadow(0 2px 10px rgba(0,0,0,.1));
+
+    overflow: hidden;
+
+    &__content {
+        padding: @padding-large;
+    }
+
+    &__title {
+        color: @dark-color;
+        margin-bottom: @margin-base;
+    }
+
+    &__text {
+        color: @text-color;
+        line-height: 1.6;
+    }
+
+    &__footer {
+        padding: @padding-base;
+        border-top: 1px solid #ddd;
+    }
+
+    &--dark {
+        background: #theme[dark-bg];
+        color: #theme[dark-text];
+        border: 1px solid #theme[dark-border];
+    }
+}

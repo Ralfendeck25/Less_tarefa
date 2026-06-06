@@ -1,0 +1,41 @@
+.btn {
+    border: none;
+    cursor: pointer;
+    padding: @padding-base @padding-large;
+
+    .border-radius(4px);
+    .transition();
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &--primary {
+        background: @primary-color;
+        color: white;
+    }
+
+    &--secondary {
+        background: @secondary-color;
+        color: white;
+    }
+
+    &--danger {
+        background: @danger-color;
+        color: white;
+    }
+
+    &--outline {
+        background: transparent;
+        border: 2px solid @primary-color;
+        color: @primary-color;
+    }
+
+    &--large {
+        font-size: @font-size-large;
+    }
+
+    &--small {
+        font-size: @font-size-small;
+    }
+}

@@ -1,0 +1,49 @@
+@import 'variables.less';
+@import 'mixins.less';
+@import 'components/header.less';
+@import 'components/buttons.less';
+@import 'components/cards.less';
+@import 'components/footer.less';
+@import 'pages/home.less';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: @font-family-base;
+	font-size: @font-size-base;
+	color: @text-color;
+	line-height: 1.6;
+	background: #fafafa;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 @padding-base;
+}
+
+body.dark-theme {
+	background: extract(@themes, dark) [bg-primary];
+	color: extract(@themes, dark) [text-primary];
+}
+
+.text-center {
+	text-align: center;
+}
+
+.mt-1 {
+	margin-top: @margin-base;
+}
+.mt-2 {
+	margin-top: @margin-large;
+}
+.mb-1 {
+	margin-bottom: @margin-base;
+}
+.mb-2 {
+	margin-bottom: @margin-large;
+}
