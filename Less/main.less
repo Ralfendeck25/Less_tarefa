@@ -1,0 +1,80 @@
+@import 'variables.less';
+@import 'mixins.less';
+@import 'components/header.less';
+@import 'components/buttons.less';
+@import 'components/cards.less';
+@import 'components/footer.less';
+@import 'pages/home.less';
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: @font-family-base;
+	font-size: @font-size-base;
+	color: @text-color;
+	line-height: 1.6;
+	background: #fafafa;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 @padding-base;
+}
+
+body.dark-theme {
+	background: extract(@themes, dark) [bg-primary];
+	color: extract(@themes, dark) [text-primary];
+}
+
+.text-center {
+	text-align: center;
+}
+
+.mt-1 {
+	margin-top: @margin-base;
+}
+.mt-2 {
+	margin-top: @margin-large;
+}
+.mb-1 {
+	margin-bottom: @margin-base;
+}
+.mb-2 {
+	margin-bottom: @margin-large;
+}
+
+// Adicione estilos responsivos extras para o footer
+.responsive(@tablet, {
+  .footer__gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+});
+
+// Animação para as imagens da galeria
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: scale(0.9);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+.footer__gallery img {
+	animation: fadeIn 0.5s ease-out;
+	animation-fill-mode: backwards;
+
+	// Stagger animation
+	for(@i from 1 to 6) {
+		&:nth-child(@{i}) {
+			animation-delay: @i * 0.1s;
+		}
+	}
+}
